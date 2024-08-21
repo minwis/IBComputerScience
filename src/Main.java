@@ -3,34 +3,22 @@ import java.util.*;
 public class Main {
 
     public static void main(String[] args) {
-        double inch = 2.54, yard = 0.9144, mile = 1.609, centimeter = 0.3937, meter = 1.094, kilometer = 0.6214; //variables declaration
-        System.out.println(1 + " inch = " + inch + " centimeters\n" +
-                1 + " yard = " + yard + " meters \n" +
-                1 + " mile = " + mile + " kilometers\n" +
-                1 + " centimeter = " + centimeter + " inches\n" +
-                1 + " meter = " + meter + " yards\n" +
-                1 + " kilometer = " + kilometer + " miles"
-                );
+        int hits = 27, atBats = 80, roundedAvg = 0;
+        double battingAvg = 0.0;
 
-        /*
-        1 inch
-        12 inches = 1 foot
-        3 feet = 1 yard
-        1760 yard = 1 mile
-        1 mile
+        battingAvg = (double)hits/atBats;
+        battingAvg /= 0.0001;
+        int output = 0;
 
-        1cm
-        100cm = 1m
-        1000m = 1km
-         */
-        Scanner sc = new Scanner(System.in);
-        String inputUnit = sc.nextLine();
-        String outputUnit = sc.nextLine();
+        double n = battingAvg % 10;
+        if ( n >= 5) {
+            double output_first_digit = ((battingAvg - n) % 100) / 10 + 1;
+            output += output_first_digit;
+        }
 
-        int[] imperial = new int[] {1, 12, 1760, 1};
-        int[] metric = new int[] {1, 100, 1000, 1};
+        output += ((battingAvg-(battingAvg%100)) / 100) * 10;
 
+        System.out.println(output);
     }
-
 
 }
