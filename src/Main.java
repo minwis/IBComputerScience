@@ -3,18 +3,34 @@ import java.util.*;
 public class Main {
 
     public static void main(String[] args) {
-        int hits = 27, atBats = 80, roundedAvg = 0;
-        double battingAvg = (double)hits/atBats;;
-        battingAvg /= 0.0001;
+        Scanner sc = new Scanner(System.in);
 
-        double n = battingAvg % 10;
-        if ( n >= 5) {
-            roundedAvg += (int) ((battingAvg - n) % 100) / 10 + 1;
+        System.out.print("Type your name, playa: ");
+        String name = sc.nextLine();
+
+        System.out.print("(M)ale or (F)emale? ");
+        String gender_input = sc.nextLine();
+        char gender = gender_input.charAt(0);
+
+        String firstName = "";
+        String lastName = "";
+        for ( int i = 0; i < name.length(); i++ ) {
+            if ( name.charAt(i) == ' ' ) {
+                firstName = name.substring(0, i);
+                lastName = name.substring(i+1);
+            }
         }
 
-        roundedAvg += (int) (((battingAvg-(battingAvg%100)) / 100) * 10);
+        System.out.print( firstName.charAt(0) + ". " + lastName.toUpperCase());
 
-        System.out.println(roundedAvg);
+        if ( gender == 'M' ) {
+            System.out.print(" Daddy ");
+        }
+        else { //if gender == 'F'
+            System.out.print(" Goddess ");
+        }
+
+        System.out.print(firstName + "-izzle");
     }
 
 }
