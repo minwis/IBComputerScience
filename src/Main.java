@@ -4,7 +4,7 @@ public class Main {
 
     public static void main(String[] args) {
         //Scanner sc = new Scanner(System.in);
-        /*
+
         for ( int i = 1; i  <= 5; i++ ) {
             for ( int j = 0; j < i; j++ ) {
                 System.out.print("* ");
@@ -23,7 +23,7 @@ public class Main {
                 }
             }
             System.out.println();
-        }*/
+        }
 
         /*
         for ( int i = 1; i <= 5; i++ ) {
@@ -38,34 +38,25 @@ public class Main {
             System.out.println();
         }
          */
-        /*System.out.println();
+        System.out.println();
+
+        int starStringLength = 1;
 
         for ( int i = 1; i <= 20; i++ ) {
 
-            //int J = 1;
-            for ( int j = 1; j <= 20 - i - 1; j++ ) {
+            for ( int j = 1; j < 40-starStringLength; j++ ) {
                 System.out.print(" ");
             }
-            for ( int j = 20-i; j <= 20+i; j++ ) {
+
+            for ( int j = 0; j< starStringLength; j++ ) {
                 System.out.print(" *");
             }
-            for ( int j = 20+(2 * i); j <= 40; j++ ) {
-                System.out.print(" ");
-            }
 
+            starStringLength += 2;
             System.out.println();
-        }
-        */
 
-        System.out.print("She said" + " \"Hello\" to me" +
-                "\nI want to write \\" +
-                "\n\tIn this sentence I started with an indention." +
-                "\nMy name is \'Alice\'" +
-                "\n\tHere is some \"Text\" that" +
-                 "\n" +
-                "\nI'd like to be \"escaped\" for Java." +
-                "\n" +
-                "\nI'll try a couple special characters here: \\");
+        }
+
 
 
     }
