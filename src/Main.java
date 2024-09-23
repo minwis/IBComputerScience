@@ -6,41 +6,36 @@ public class Main {
 
     public static void main(String[] args) {
         int i = 0;
-        while ( true ) {
-            System.out.println("Ask a yes or no question?");
-            String useless_question = sc.nextLine();
-            int randomN = (int) (Math.random() * 10);
-            int randomN2 = (int) (Math.random() * 10);
-            boolean randomBool = randomN2 < 5;
+        do {
+            System.out.print(i + " ");
+            i++;
+        } while( i <= 20 );
 
-            if (randomN == 0 && randomBool) {
-                System.out.println("Don't worry, everything will be alright..");
+        System.out.println();
+
+        i = 1;
+        do {
+            if ( i % 2 == 1 ) {
+                System.out.print(i + " ");
             }
-            else {
-                randomN /= 2;
-                switch ( randomN ) {
-                    case 0:
-                        System.out.println("I don't think so.");
-                        break;
-                    case 1:
-                        System.out.println("Without a doubt!!");
-                        break;
-                    case 2:
-                        System.out.println("Yes.");
-                        break;
-                    case 3:
-                        System.out.println("Ask again later.");
-                        break;
-                    case 4:
-                        System.out.println("No..");
-                        break;
-                }
+            i++;
+        } while ( i <= 50 );
 
-            }
+        System.out.println();
 
-            System.out.println();
+        i = 0;
+        do {
+            System.out.print(i + " ");
+            i+=10;
+        } while( i <= 200 );
 
-        }
+        System.out.println();
+
+        i = 97;
+        do {
+            System.out.print((char)i + " ");
+            i++;
+        } while ( i <= 122 );
     }
 
 }
