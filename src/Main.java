@@ -5,22 +5,41 @@ public class Main {
     public static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
-        System.out.println("Carbon dating lookup table\npercent C-14 remaining: years passed\n----------------------------");
-        double percent = 100.0;
-        int age = 0;
         int i = 0;
-        while ( i < 20 ) {
-            System.out.println(percent + "%: " + age);
-            age+=5700;
-            percent /= 2;
-            i++;
-        }
-
         while ( true ) {
-            System.out.print("\nWhat percent of natural carbon-14 does your sample have? ");
-            percent = sc.nextDouble();
-            System.out.println(percent + "% carbon-14...\n" +
-                    "It is: " + (Math.log(percent / 100) / -0.693) * 5700 + " years old");
+            System.out.println("Ask a yes or no question?");
+            String useless_question = sc.nextLine();
+            int randomN = (int) (Math.random() * 10);
+            int randomN2 = (int) (Math.random() * 10);
+            boolean randomBool = randomN2 < 5;
+
+            if (randomN == 0 && randomBool) {
+                System.out.println("Don't worry, everything will be alright..");
+            }
+            else {
+                randomN /= 2;
+                switch ( randomN ) {
+                    case 0:
+                        System.out.println("I don't think so.");
+                        break;
+                    case 1:
+                        System.out.println("Without a doubt!!");
+                        break;
+                    case 2:
+                        System.out.println("Yes.");
+                        break;
+                    case 3:
+                        System.out.println("Ask again later.");
+                        break;
+                    case 4:
+                        System.out.println("No..");
+                        break;
+                }
+
+            }
+
+            System.out.println();
+
         }
     }
 
