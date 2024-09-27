@@ -3,83 +3,46 @@ import java.util.*;
 public class Main {
 
     public static Scanner sc = new Scanner(System.in);
-    public static String firstName;
-    public static String lastName;
-    public static String gradYear;
 
     public static void main(String[] args) {
-        System.out.println("Please enter your first name:");
-        firstName = sc.nextLine();
-        System.out.println("Please enter your last name:");
-        lastName = sc.nextLine();
-        System.out.println("Please enter your graduation year(in [yyyy] format):");
-        gradYear = sc.nextLine();
-
-        System.out.println(firstName.toLowerCase() + lastName.substring(0,1).toLowerCase()+ gradYear.substring(2) + "@stu.koc.k12.tr");
-
-        System.out.println();
-
-        //Extra
-        System.out.println("Are you student or teacher?");
-        String role = sc.nextLine();
-        System.out.println("Please enter your first name:");
-        firstName = sc.nextLine();
-
-
-        String secondName = "";
-        if (role.equals("student") || role.equals("Student")) {
-            System.out.println("Please enter your middle/second name:");
-            secondName = sc.nextLine();
-        }
-
-        System.out.println("Please enter your last name:");
-        lastName = sc.nextLine();
-
-        gradYear = "";
-        if (role.equals("student") || role.equals("Student")) {
-            System.out.println("Please enter your graduation year:");
-            gradYear = sc.nextLine();
-        }
-
-        String firstCharOfSecName = "";
-
-        if ( !secondName.isEmpty()) {
-            firstCharOfSecName = secondName.substring(0,1).toUpperCase() + secondName.substring(1);
-        }
-        System.out.println(firstName.toLowerCase() + firstCharOfSecName + lastName.charAt(0) + gradYear + "@koc.k12.tr");
-
-        System.out.println();
-
-        //AES Email Generator
-        // --> numbers added at the end of the address when the students' grad year, first name and last name overlap
-        //is not implemented.
-        //The number requires efficient and comprehensive index data structure
-
-        System.out.println("Welcome to AES!\nAre you a student or a teacher");
-        role = sc.nextLine();
-        System.out.println("What is your name (first, second, last name)?");
-        String name = sc.nextLine();
-
-        String firstCharName = name.substring(0,1).toLowerCase();
-
-        int i = 0;
-        int spaceIndex = 0;
-        while ( i < name.length() ) {
-            if ( name.charAt(i) == ' ' ) {
-                spaceIndex = i;
+        String[] substitutingWords = new String[13];
+        for ( int i = 1; i <= 12; i++ ) {
+            System.out.print("[" + i + "] ");
+            if ( i == 2 ) {
+                System.out.print("Enter a type of VEHICLE --> ");
             }
-            i++;
+            else if ( i == 8 ) {
+                System.out.print("Enter a VERB ending in 'ed --> ");
+            }
+            else if ( i == 3 || i == 4 || i == 7 ) {
+                System.out.print("Enter an ADJECTIVE --> ");
+            }
+            else {
+                System.out.print("Enter a NOUN --> ");
+            }
+            substitutingWords[i] = sc.nextLine();
         }
-        lastName = name.substring(spaceIndex + 1);
 
-        System.out.println("What is your graduation year? (Format: [yyyy])");
-        if ( role.charAt(0) == 's' || role.charAt(0) == 'S') {
-            gradYear = sc.nextLine();
-        }
+        System.out.println("Just sit right back and you`ll hear a tale,");
+        System.out.println("A tale of a fateful " + substitutingWords[1] + ",");
+        System.out.println("That started from this tropic port,");
+        System.out.println("Aboard this tiny " + substitutingWords[2] + ".");
+        System.out.println();
+        System.out.println("The mate was a " + substitutingWords[3]+ " sailor man,");
+        System.out.println("The skipper " + substitutingWords[4]+ " and sure.");
+        System.out.println("Five + " + substitutingWords[5] + " set sail that day,");
+        System.out.println("For a three hour " + substitutingWords[6] + ", a three hour " + substitutingWords[6] + ".");
+        System.out.println();
+        System.out.println("The weather started getting " + substitutingWords[7] + ",");
+        System.out.println("The tiny " + substitutingWords[2]+ " was " + substitutingWords[8] + ",");
+        System.out.println("If not for the " + substitutingWords[9] + " of the fearless crew ,");
+        System.out.println("The " + substitutingWords[10] + " would be lost, the " + substitutingWords[10] +" would be lost.");
+        System.out.println();
+        System.out.println("The " + substitutingWords[2] + " set ground on the shore of this uncharted desert isle,");
+        System.out.println("With Gilligan, The Skipper too,");
+        System.out.println("The millionaire and his " + substitutingWords[11] + " , The movie " + substitutingWords[12] + ",");
+        System.out.println("And The Rest, Here on Gilligan`s Isle.");
 
-        String email = gradYear.substring(2) + firstCharName + lastName.toLowerCase();
-
-        System.out.println( email + "@aes.ac.in");
 
     }
 
