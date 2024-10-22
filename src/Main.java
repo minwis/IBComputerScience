@@ -5,27 +5,28 @@ public class Main {
     public static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
+        System.out.println("Enter the number fo rows: ");
+        int rowN = sc.nextInt();
+        System.out.println("Enter the number fo columns: ");
+        int columnN = sc.nextInt();
+        int[] columnSums = new int[columnN];
 
-        System.out.println("Enter 10 words");
+        System.out.println();
+        for ( int row = 0; row < rowN; row++ ) {
+            int rowSum = 0;
+            for ( int column = 0; column < columnN; column++) {
+                int randomN = (int)(Math.random() * 10);
+                System.out.print(randomN + " ");
+                rowSum += randomN;
+                columnSums[column] += randomN;
+            }
+            System.out.println( " " + rowSum );
 
-        String[] arr_word = new String[10];
-        //Write a Java Program to find the second highest value in a numeric array.
-        for ( int i = 0; i < 10; i ++ ) {
-            System.out.print("Word " + (i+1) + " --> ");
-            arr_word[i] = sc.nextLine();
         }
 
-        for ( int i = 0; i < 10; i ++ ) {
-            int count = 0;
-            int j = 0;
-            for ( j = 0; j < arr_word[i].length(); j++ ) {
-                String word = arr_word[i];
-                if ( word.charAt(j) == 'a' || word.charAt(j) == 'e' || word.charAt(j) == 'i' || word.charAt(j) == 'o' || word.charAt(j) == 'u' ) {
-                    count++;
-                }
-
-            }
-            System.out.println(arr_word[i] + " --> " + count);
+        System.out.println();
+        for ( int i = 0; i < columnN; i++ ) {
+            System.out.print(columnSums[i] + " ");
         }
 
     }
